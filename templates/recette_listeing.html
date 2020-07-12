@@ -1,0 +1,9 @@
+<p class="itemText">
+<span class="itemTitle"><{$ingredienttitle}></span><br>
+<{foreach item=ing from=$listeing}>
+		<li>
+		<a href="<{$xoops_url}>/modules/recette/index.php?ingid=<{$ing.id}>">
+			<{$ing.name}> (<{$ing.nb}>)
+		</a>	
+		</li>
+<{/foreach}></p>

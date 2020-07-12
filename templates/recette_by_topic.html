@@ -1,0 +1,31 @@
+<div class="item">
+<table width=100% border=0>
+    <tr>
+        <{section name=i loop=$columns}>
+            <td width="<{$columnwidth}>%" valign="top">
+                <!-- start topic loop -->
+                <{foreach item=topic from=$columns[i]}>
+                    <div class="itemBody">
+                    <div class="itemInfo"><span class="itemText"><a href="<{$xoops_url}>/modules/recette/index.php?storytopic=<{$topic.id}>"><{$topic.title}></a></span></div>
+                    <!-- start news item loop -->
+                    <{counter start=0 print=false assign=storynum}>
+					<ul>					
+                    <{foreach item=story from=$topic.stories}>
+                        <li><a href="<{$xoops_url}>/modules/recette/article.php?storyid=<{$story.id}>"><{$story.title}></a> (<{$story.posttime}>)</li>
+                      <{counter}>
+                    <{/foreach}>
+                    </ul>					
+                    <{if $storynum > 1}>
+                        <a href="<{$xoops_url}>/modules/recette/index.php?storytopic=<{$topic.id}>"><{$lang_morereleases}><{$topic.title}></a>
+                    <{/if}>
+                    </div>
+                    <br />
+                    <!-- end news item loop -->
+                <{/foreach}>
+            </td>
+        <{/section}>
+    </tr>
+</table>
+<!-- end topic loop -->
+</div>
+<{include file='db:system_notification_select.html'}>

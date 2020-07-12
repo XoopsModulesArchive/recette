@@ -1,0 +1,26 @@
+<{if $displaynav == true}>
+  <div style="text-align: center;">
+    <form name="form1" action="index.php" method="get">
+    <{$topic_select}> <select name="storynum"><{$storynum_options}></select> <input type="submit" value="<{$lang_go}>" class="formButton" /></form>
+  <hr />
+  </div>
+<{/if}>
+
+<div style="margin: 10px;"><{$pagenav}></div>
+<table width=100% border=0>
+    <tr>
+        <!-- start news item loop -->
+        <{section name=i loop=$columns}>
+            <td width="<{$columnwidth}>%">
+				<ul>	
+                <{foreach item=story from=$columns[i]}>
+					<li><a href="<{$xoops_url}>/modules/recette/article.php?storyid=<{$story.id}>"><{$story.title}></a> (<{$story.posttime}>)</li>
+                <{/foreach}>
+				</ul>
+            </td>
+        <{/section}>
+    </tr>
+</table>
+
+<div style="text-align: right; margin: 10px;"><{$pagenav}></div>
+<{include file='db:system_notification_select.html'}>

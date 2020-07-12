@@ -1,0 +1,54 @@
+<table cellpadding="0" cellspacing="0" class="item">
+    <tr>
+        <td>
+		<{foreach item=scat from=$block.categories}>							
+							<span title="<{$scat.descr}>">
+								<{$scat.cat}>:
+								<img border="0" align="absmiddle" src="<{$xoops_url}>/modules/recette/images/cats/<{$scat.img}>"/>
+							</span>&nbsp;						
+					<{/foreach}>				
+					<{$block.cattitle}> : <{$block.story.imglink}> <{$block.story.titlecategorie}><bR>
+		<center><h1><{$block.story.title}></h1></center><br>
+		
+		<table cellpadding="0" cellspacing="0" width="100%">
+			<tr>
+				<td align="left" style="font-size:10px">
+				<div class="itemBody">						                     
+					<li><{$block.nbpers}><{$block.story.nbpers}></li>
+					<li><{$block.tpsprep}><{$block.story.tpsprep}></li>
+					<li><{$block.tpscuis}><{$block.story.tpscuisson}></li>
+					<li><{$block.tpsrepo}><{$block.story.tpsrepo}></li>							
+				
+					<h2><{$block.ingredienttitle}></h2>									
+					<{foreach item=ing from=$block.ingredients}>
+						<li>
+						<{$ing.quant}> 
+						<a href="<{$xoops_url}>/modules/recette/index.php?ingid=<{$ing.id}>">
+						<{$ing.text}>
+						</a>
+						</li>
+					<{/foreach}></p>
+				</div>
+				</td>			
+				<td align="center" ><{$block.story.image}></td>
+				
+			</tr>
+		</table>
+        <table cellpadding="0" cellspacing="0" width="98%">
+            <tbody>
+                <tr>
+                    <td>
+					<div class="itemBody">
+							<h2><{$block.recettetitle}></h2>
+                            <p class="itemText">							
+							<{$block.story.text}></p>
+                    </div>
+					
+					
+                    </td>
+                </tr>
+             </tbody>
+         </table>
+      </td>
+  </tr>
+</table>

@@ -1,0 +1,62 @@
+<table cellpadding="0" cellspacing="0" class="item">
+    <tr>
+        <td>
+		<{foreach item=scat from=$categories}>							
+							<span title="<{$scat.descr}>">
+								<{$scat.cat}>:
+								<img border="0" align="absmiddle" src="<{$xoops_url}>/modules/recette/images/cats/<{$scat.img}>"/>
+							</span>&nbsp;						
+					<{/foreach}>				
+					<{$cattitle}> : <{$story.imglink}> <{$story.titlecategorie}><bR>
+		<center><h1><{$story.title}></h1></center><br>
+		
+		<table cellpadding="0" cellspacing="0" width="100%">
+			<tr>
+				<td align="left" style="font-size:10px">
+				<div class="itemBody">						                     
+					<li><{$nbpers}><{$story.nbpers}></li>
+					<li><{$tpsprep}><{$story.tpsprep}></li>
+					<li><{$tpscuis}><{$story.tpscuisson}></li>
+					<li><{$tpsrepo}><{$story.tpsrepo}></li>							
+				
+					<h2><{$ingredienttitle}></h2>									
+					<{foreach item=ing from=$ingredients}>
+						<li>
+						<{$ing.quant}>
+						<a href="<{$xoops_url}>/modules/recette/index.php?ingid=<{$ing.id}>">
+						<{$ing.text}>
+						</a>
+						</li>
+					<{/foreach}></p>
+				</div>
+				</td>			
+				<td align="center" ><{$story.image}></td>
+				
+			</tr>
+		</table>
+        <table cellpadding="0" cellspacing="0" width="98%">
+            <tbody>
+                <tr>
+                    <td>
+					<div class="itemBody">
+							<h2><{$recettetitle}></h2>
+                            <p class="itemText">							
+							<{$story.text}></p>
+                    </div>
+					
+					
+                    </td>
+                </tr>
+                <tr>
+                    <td class="itemFoot">
+                        <span class="itemAdminLink"><{$story.adminlink}></span>
+                        <span class="itemPermaLink"><{$story.morelink}></span>
+						<{if $story.poster != ''}><span class="itemPoster"><{$lang_postedby}> <{$story.poster}></span><{/if}>
+                        <span class="itemPostDate"><{$lang_on}> <{$story.posttime}></span> (<span class="itemStats"><{$story.hits}> <{$lang_reads}></span>)						
+                    </td>
+                </tr>
+             </tbody>
+         </table>
+      </td>
+  </tr>
+</table>
